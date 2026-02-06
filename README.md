@@ -1,63 +1,40 @@
 # Publication Blog
 
-A static blog powered by [Outstatic CMS](https://outstatic.com), deployed to GitHub Pages via GitHub Actions.
+A blog powered by [Outstatic CMS](https://outstatic.com) with flexible deployment options.
 
 ## 🚀 Quick Start
 
 ```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-# Access at http://localhost:3000
-
-# Access CMS dashboard (local)
-# http://localhost:3000/outstatic
+npm install      # Install dependencies
+npm run dev      # Start dev server (localhost:3000)
 ```
 
 ## 📖 Documentation
 
-**Start Here:** `.context/PROJECT_CONTEXT.md`
+See `.context/PROJECT_CONTEXT.md` for full details.
 
-| File | Purpose |
-|------|---------|
-| `.context/PROJECT_CONTEXT.md` | Project overview & architecture |
-| `.context/GOVERNANCE.md` | AI agent interaction rules |
-| `.context/PROCEDURES.md` | Step-by-step procedures |
+## 🏗️ Deployment Options
 
-## 🏗️ Architecture
+| Platform | CMS Dashboard | How to Deploy |
+|----------|---------------|---------------|
+| **Vercel** | ✅ Full support | Connect repo in Vercel dashboard |
+| **GitHub Pages** | ❌ Static only | Auto-deploy via GitHub Actions |
 
-| Component | Platform |
-|-----------|----------|
-| CMS Dashboard | Vercel/Netlify (OAuth required) |
-| Blog Frontend | GitHub Pages (static) |
-| CI/CD | GitHub Actions |
+### Vercel (Recommended)
 
-## 🎯 Key Info
+1. Import repo in [Vercel](https://vercel.com/new)
+2. Add environment variables:
+   - `OST_GITHUB_ID` - GitHub OAuth Client ID
+   - `OST_GITHUB_SECRET` - GitHub OAuth Client Secret
+   - `OST_REPO_SLUG` - `publication-blog`
+   - `OST_REPO_OWNER` - `doctor500`
+3. Deploy!
 
-- **Framework:** Next.js 15 (App Router)
-- **CMS:** Outstatic (Git-based, no database)
-- **Content:** Stored as Markdown in `outstatic/content/`
+### GitHub Pages
 
-## 📝 Content Workflow
+Push to `main` → GitHub Actions auto-deploys static site.
 
-1. Editor logs into CMS dashboard (Vercel deployment)
-2. Creates/edits content → auto-commits to repo
-3. GitHub Actions builds → deploys to GitHub Pages
-
----
-
-## 📂 Structure
-
-```
-publication-blog/
-├── .context/              # AI agent documentation
-├── .github/workflows/     # GitHub Actions
-├── src/app/               # Next.js pages
-├── outstatic/content/     # Markdown content
-└── public/                # Static assets
-```
+> Note: CMS dashboard requires Vercel deployment.
 
 ---
 

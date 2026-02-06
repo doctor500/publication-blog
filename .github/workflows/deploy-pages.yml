@@ -38,6 +38,7 @@ jobs:
       - name: Build static export
         run: npm run build
         env:
+          STATIC_EXPORT: 'true'
           NEXT_PUBLIC_BASE_PATH: '/publication-blog'
           
       - name: Upload artifact

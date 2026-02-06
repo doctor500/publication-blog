@@ -2,7 +2,7 @@
 
 ## Overview
 
-A static blog powered by **Outstatic CMS**, deployed to **GitHub Pages** via GitHub Actions.
+A blog powered by **Outstatic CMS** with flexible deployment options.
 
 ## Tech Stack
 
@@ -11,63 +11,44 @@ A static blog powered by **Outstatic CMS**, deployed to **GitHub Pages** via Git
 | **Framework** | Next.js 15 (App Router) |
 | **CMS** | Outstatic (headless, Git-based) |
 | **Styling** | Tailwind CSS |
-| **Blog Hosting** | GitHub Pages (static) |
-| **CMS Dashboard** | Vercel/Netlify (for OAuth) |
-| **CI/CD** | GitHub Actions |
+| **Deployment** | Vercel (full) or GitHub Pages (static) |
 
-## Architecture
+## Deployment Options
 
-```mermaid
-flowchart LR
-    A[Editor] -->|Login| B[Outstatic Dashboard<br/>Vercel/Netlify]
-    B -->|Commits markdown| C[publication-blog repo]
-    C -->|Push trigger| D[GitHub Actions]
-    D -->|Build & Deploy| E[GitHub Pages]
-    F[Readers] --> E
-```
+| Platform | CMS Dashboard | API Routes | Static Content |
+|----------|---------------|------------|----------------|
+| **Vercel** | ✅ | ✅ | ✅ |
+| **GitHub Pages** | ❌ | ❌ | ✅ |
 
-## Key Decisions
+### Vercel (Recommended)
+- Full Outstatic CMS dashboard at `/outstatic`
+- OAuth authentication works
+- Dynamic and static content
 
-- **Hybrid Deployment**: CMS dashboard hosted separately (requires OAuth callbacks)
-- Content stored in `outstatic/content/` as Markdown files
-- Static export for GitHub Pages hosting
-
-## Directory Structure
-
-```
-publication-blog/
-├── .context/              # AI Agent project context
-│   ├── PROJECT_CONTEXT.md # This file
-│   ├── GOVERNANCE.md      # AI agent rules
-│   └── PROCEDURES.md      # Step-by-step procedures
-├── .github/workflows/
-│   └── deploy-pages.yml   # GitHub Actions workflow
-├── src/app/
-│   ├── page.tsx           # Blog homepage
-│   ├── posts/[slug]/      # Individual post pages
-│   └── outstatic/[[...ost]]/
-│       └── page.tsx       # CMS dashboard route
-├── outstatic/content/     # Markdown content (auto-generated)
-└── next.config.ts         # Static export config
-```
+### GitHub Pages
+- Static blog content only
+- Uses `STATIC_EXPORT=true` env var
+- Auto-deploys via GitHub Actions
 
 ## Commands
 
 | Command | Description |
 |---------|-------------|
-| `npm run dev` | Local development server |
-| `npm run build` | Static export build (outputs to `out/`) |
-| `npm run start` | Local production preview |
+| `npm run dev` | Local development |
+| `npm run build` | Vercel build (dynamic) |
+| `STATIC_EXPORT=true npm run build` | GitHub Pages build (static) |
 
-## Content Management
+## Content Directory
 
-1. Editors access Outstatic dashboard at the Vercel/Netlify deployment URL
-2. Content changes auto-commit to this repo
-3. GitHub Actions triggers → builds static site → deploys to Pages
+```
+outstatic/content/
+├── posts/           # Blog posts (Collection)
+└── _singletons/     # Single pages (Homepage, About, etc.)
+```
 
 ## Environment Variables
 
-Required in CMS dashboard deployment (Vercel/Netlify):
+Required for Vercel deployment:
 
 | Variable | Description |
 |----------|-------------|
