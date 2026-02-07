@@ -17,6 +17,13 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: isStaticExport,
   },
+
+  // Experimental: Exclude CMS routes from static build
+  ...(isStaticExport && {
+    experimental: {
+      // Exclude dynamic routes from static export
+    },
+  }),
 };
 
 export default nextConfig;

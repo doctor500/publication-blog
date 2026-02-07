@@ -34,6 +34,19 @@ jobs:
           
       - name: Install dependencies
         run: npm ci
+      
+      - name: Exclude CMS routes for static build
+        run: |
+          echo "📦 Preparing for static export..."
+          if [ -d "src/app/outstatic" ]; then
+            echo "Removing CMS dashboard routes..."
+            rm -rf src/app/outstatic
+          fi
+          if [ -d "src/app/api" ]; then
+            echo "Removing API routes..."
+            rm -rf src/app/api
+          fi
+          echo "✅ CMS routes excluded"
         
       - name: Build static export
         run: npm run build
