@@ -8,6 +8,7 @@ on:
       - 'src/**'
       - 'package.json'
       - 'public/**'
+      - '.github/workflows/**'
   workflow_dispatch:
 
 permissions:
