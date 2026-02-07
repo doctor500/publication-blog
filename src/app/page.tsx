@@ -1,6 +1,27 @@
+/**
+ * Home Page - Blog Post Listing
+ * 
+ * Displays all published blog posts in a responsive grid.
+ * Statically generated at build time for optimal performance.
+ * 
+ * @see https://outstatic.com/docs/fetching-data
+ */
 import { getDocuments } from 'outstatic/server';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
+/** SEO Metadata for the home page */
+export const metadata: Metadata = {
+  title: 'Publication Blog',
+  description: 'A static blog powered by Outstatic CMS and Next.js',
+  openGraph: {
+    title: 'Publication Blog',
+    description: 'A static blog powered by Outstatic CMS and Next.js',
+    type: 'website',
+  },
+};
+
+/** Post type returned from Outstatic */
 type Post = {
   title: string;
   slug: string;
@@ -8,20 +29,27 @@ type Post = {
   description?: string;
 };
 
+/**
+ * Home Page Component
+ * 
+ * Fetches all posts from outstatic/content/posts directory
+ * and renders them in a responsive card grid.
+ */
 export default async function Home() {
   let posts: Post[] = [];
 
   try {
+    // Fetch posts from local markdown files (outstatic/content/posts/)
     posts = getDocuments('posts', ['title', 'slug', 'publishedAt', 'description']);
   } catch (e) {
-    // No posts yet or content directory doesn't exist
+    // Graceful degradation: show empty state if no posts exist
     console.log('No posts found or outstatic not configured:', e);
   }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-50 to-white dark:from-zinc-950 dark:to-black">
       <main className="mx-auto max-w-4xl px-6 py-16">
-        {/* Header */}
+        {/* Page Header */}
         <header className="mb-16 text-center">
           <h1 className="mb-4 text-5xl font-bold tracking-tight text-zinc-900 dark:text-white">
             Publication Blog
@@ -31,8 +59,8 @@ export default async function Home() {
           </p>
         </header>
 
-        {/* Posts Grid */}
-        <section>
+        {/* Posts Grid - Responsive 1-2 column layout */}
+        <section aria-label="Blog posts">
           {posts.length > 0 ? (
             <div className="grid gap-8 md:grid-cols-2">
               {posts.map((post) => (
@@ -49,7 +77,10 @@ export default async function Home() {
                         {post.description}
                       </p>
                     )}
-                    <time className="text-sm text-zinc-500 dark:text-zinc-500">
+                    <time
+                      className="text-sm text-zinc-500 dark:text-zinc-500"
+                      dateTime={post.publishedAt}
+                    >
                       {new Date(post.publishedAt).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'long',
@@ -61,6 +92,7 @@ export default async function Home() {
               ))}
             </div>
           ) : (
+            /* Empty State */
             <div className="rounded-2xl border border-dashed border-zinc-300 bg-zinc-50 p-12 text-center dark:border-zinc-700 dark:bg-zinc-900">
               <h2 className="mb-2 text-xl font-semibold text-zinc-700 dark:text-zinc-300">
                 No posts yet
@@ -72,7 +104,7 @@ export default async function Home() {
           )}
         </section>
 
-        {/* Footer */}
+        {/* Footer with external links */}
         <footer className="mt-16 border-t border-zinc-200 pt-8 text-center text-sm text-zinc-500 dark:border-zinc-800">
           <p>
             Built with{' '}
