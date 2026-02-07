@@ -53,7 +53,7 @@ jobs:
         run: npm run build
         env:
           STATIC_EXPORT: 'true'
-          NEXT_PUBLIC_BASE_PATH: '/publication-blog'
+          # Note: NEXT_PUBLIC_BASE_PATH is omitted since custom domain serves from root
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
