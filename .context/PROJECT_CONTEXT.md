@@ -2,61 +2,55 @@
 
 ## Overview
 
-A blog powered by **Outstatic CMS** with flexible deployment options.
+A blog powered by **Outstatic CMS** with dual deployment architecture.
+
+## Architecture
+
+| Platform | Purpose | URL |
+|----------|---------|-----|
+| **GitHub Pages** | Static Blog | https://publication.layardi.com/ |
+| **Netlify** | CMS Admin | https://cms.publication.layardi.com/outstatic/ |
 
 ## Tech Stack
 
 | Component | Technology |
 |-----------|------------|
-| **Framework** | Next.js 15 (App Router) |
-| **CMS** | Outstatic (headless, Git-based) |
-| **Styling** | Tailwind CSS |
-| **Deployment** | Vercel (full) or GitHub Pages (static) |
-
-## Deployment Options
-
-| Platform | CMS Dashboard | API Routes | Static Content |
-|----------|---------------|------------|----------------|
-| **Vercel** | ✅ | ✅ | ✅ |
-| **GitHub Pages** | ❌ | ❌ | ✅ |
-
-### Vercel (Recommended)
-- Full Outstatic CMS dashboard at `/outstatic`
-- OAuth authentication works
-- Dynamic and static content
-
-### GitHub Pages
-- Static blog content only
-- Uses `STATIC_EXPORT=true` env var
-- Auto-deploys via GitHub Actions
+| Framework | Next.js 16 (App Router) |
+| CMS | Outstatic v2.0 (headless, Git-based) |
+| Styling | Tailwind CSS v4 |
 
 ## Commands
 
 | Command | Description |
 |---------|-------------|
-| `npm run dev` | Local development |
-| `npm run build` | Vercel build (dynamic) |
-| `STATIC_EXPORT=true npm run build` | GitHub Pages build (static) |
+| `npm run dev` | Local development (localhost:3000) |
+| `npm run build` | Default build (used by Netlify) |
+| `STATIC_EXPORT=true npm run build` | GitHub Pages build |
 
 ## Content Directory
 
 ```
 outstatic/content/
-├── posts/           # Blog posts (Collection)
-└── _singletons/     # Single pages (Homepage, About, etc.)
+├── posts/           # Blog posts
+└── _singletons/     # Single pages
 ```
 
-## Environment Variables
-
-Required for Vercel deployment:
+## Environment Variables (Netlify)
 
 | Variable | Description |
 |----------|-------------|
 | `OST_GITHUB_ID` | GitHub OAuth App Client ID |
-| `OST_GITHUB_SECRET` | GitHub OAuth App Client Secret |
+| `OST_GITHUB_SECRET` | GitHub OAuth App Secret |
 | `OST_REPO_SLUG` | `publication-blog` |
 | `OST_REPO_OWNER` | `doctor500` |
 
+## Content Workflow
+
+1. Editor logs in at CMS → creates/edits post
+2. CMS commits to GitHub repo
+3. GitHub Actions builds static export
+4. GitHub Pages deploys updated blog
+
 ---
 
-*Last Updated: 2026-02-07*
+*Last Updated: 2026-02-08*

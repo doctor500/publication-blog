@@ -5,16 +5,22 @@
 
 ## Quick Reference
 
-**Stack:** Next.js 15 + Outstatic CMS + Tailwind  
-**Deploy:** Vercel (full CMS) or GitHub Pages (static only)
+**Stack:** Next.js 16 + Outstatic CMS v2.0 + Tailwind v4
+
+## Live URLs
+
+| Purpose | URL |
+|---------|-----|
+| **Blog** | https://publication.layardi.com/ |
+| **CMS** | https://cms.publication.layardi.com/outstatic/ |
 
 ## Commands
 
 ```bash
 npm install                    # Install
-npm run dev                    # Dev server (localhost:3000)
-npm run build                  # Vercel build (dynamic)
-STATIC_EXPORT=true npm run build  # GitHub Pages build (static)
+npm run dev                    # Dev server
+npm run build                  # Netlify build
+STATIC_EXPORT=true npm run build  # GitHub Pages build
 ```
 
 ## Key Paths
@@ -22,11 +28,10 @@ STATIC_EXPORT=true npm run build  # GitHub Pages build (static)
 - `.context/` - Project documentation & governance
 - `outstatic/content/` - Markdown content (CMS-managed)
 - `.github/workflows/` - GitHub Actions for Pages deploy
-- `vercel.json` - Vercel deployment configuration
 
 ## Deployment
 
-| Platform | CMS Dashboard | Command |
-|----------|---------------|---------|
-| Vercel | ✅ Yes | `vercel deploy` |
-| GitHub Pages | ❌ No | Push to main (auto) |
+| Platform | Purpose | Auto-Deploy |
+|----------|---------|-------------|
+| Netlify | CMS Admin | On push/commit |
+| GitHub Pages | Static Blog | On push via Actions |
