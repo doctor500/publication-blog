@@ -1,6 +1,7 @@
 # Publication Blog
 
-> AI agents: Read `.context/PROJECT_CONTEXT.md` for full context.
+> AI agents: Read `.context/PROJECT_CONTEXT.md` for full context.  
+> **Security:** Read `.context/SECURITY.md` before handling credentials.
 
 ## Quick Reference
 
