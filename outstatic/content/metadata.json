@@ -1,15 +1,15 @@
 {
-  "commit": "",
-  "generated": "2026-02-08T16:08:50.389Z",
+  "commit": "34a7f2875fad197a67657653b6e463ed3c25d5a4",
+  "generated": "2026-02-08T16:09:22.213Z",
   "metadata": [
     {
       "__outstatic": {
-        "commit": "",
-        "hash": "3947352920",
+        "commit": "34a7f2875fad197a67657653b6e463ed3c25d5a4",
+        "hash": "4281396355",
         "path": "outstatic/content/posts/cms-test-article.mdx"
       },
       "author": {
-        "name": "David LayardiDavid Layardi",
+        "name": "David Layardi",
         "picture": "https://avatars.githubusercontent.com/u/11472121?v=4"
       },
       "collection": "posts",
