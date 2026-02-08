@@ -1,6 +1,7 @@
 # Publication Blog
 
 > AI agents: Read `.context/PROJECT_CONTEXT.md` for full context.  
+> **Governance:** Read `.context/GOVERNANCE.md` for workflow rules & quality gates.  
 > **Security:** Read `.context/SECURITY.md` before handling credentials.
 
 ## Quick Reference

@@ -10,17 +10,17 @@ This document outlines security guidelines, checklists, and credential managemen
 
 | Variable | Purpose | Storage Location |
 |----------|---------|------------------|
-| `OST_GITHUB_ID` | GitHub OAuth Client ID | Vercel/Local `.env.local` |
-| `OST_GITHUB_SECRET` | GitHub OAuth Client Secret | Vercel/Local `.env.local` |
-| `OST_REPO_OWNER` | Repository owner | Vercel/Local `.env.local` |
-| `OST_REPO_SLUG` | Repository name | Vercel/Local `.env.local` |
+| `OST_GITHUB_ID` | GitHub OAuth Client ID | Netlify/Local `.env.local` |
+| `OST_GITHUB_SECRET` | GitHub OAuth Client Secret | Netlify/Local `.env.local` |
+| `OST_REPO_OWNER` | Repository owner | Netlify/Local `.env.local` |
+| `OST_REPO_SLUG` | Repository name | Netlify/Local `.env.local` |
 
 ### Where to Store Secrets
 
 | Environment | Storage Method |
 |-------------|----------------|
 | **Local Dev** | `.env.local` (gitignored) |
-| **Vercel** | Project Settings → Environment Variables |
+| **Netlify** | Site Settings → Environment Variables |
 | **GitHub Actions** | Repository Settings → Secrets → Actions |
 
 > [!CAUTION]
@@ -39,7 +39,7 @@ This document outlines security guidelines, checklists, and credential managemen
 
 ### Before Deployment
 
-- [ ] Environment variables set in Vercel Dashboard
+- [ ] Environment variables set in Netlify Dashboard
 - [ ] OAuth callback URLs configured correctly
 - [ ] GitHub OAuth App permissions are minimal
 - [ ] No test credentials in production config

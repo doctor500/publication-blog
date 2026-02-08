@@ -42,6 +42,19 @@ All code changes require **Security** and **Code Quality** checks before and aft
 
 ---
 
+## Post-Task Checklist (Mandatory)
+
+After completing ANY task, AI agents MUST:
+
+1. **Run Quality Gates** - Execute security and code quality checks
+2. **Verify Context Accuracy** - Ensure `.context/` files reflect current state
+3. **Document Changes** - Update relevant docs if architecture/procedures changed
+
+> [!CAUTION]
+> This checklist is MANDATORY after every task completion.
+
+---
+
 ## Auto-Pilot Mode (Opt-in Only)
 
 Triggered by explicit user consent:
@@ -77,4 +90,4 @@ Triggered by explicit user consent:
 
 *Always err on the side of caution - when in doubt, ask for approval.*
 
-*Last Updated: 2026-02-08*
+*Last Updated: 2026-02-09*
