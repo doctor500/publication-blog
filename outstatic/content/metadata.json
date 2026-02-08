@@ -1,22 +1,6 @@
 {
-  "commit": "34a7f2875fad197a67657653b6e463ed3c25d5a4",
-  "generated": "2026-02-08T16:09:22.213Z",
+  "commit": "a3c43ce0959c58d85c8ddd1a75da562f7c6f0eb3",
+  "generated": "2026-02-08T16:14:22.979Z",
   "metadata": [
-    {
-      "__outstatic": {
-        "commit": "34a7f2875fad197a67657653b6e463ed3c25d5a4",
-        "hash": "4281396355",
-        "path": "outstatic/content/posts/cms-test-article.mdx"
-      },
-      "author": {
-        "name": "David Layardi",
-        "picture": "https://avatars.githubusercontent.com/u/11472121?v=4"
-      },
-      "collection": "posts",
-      "publishedAt": "2026-02-08T16:59:49.903Z",
-      "slug": "cms-test-article",
-      "status": "published",
-      "title": "CMS Test Article"
-    }
   ]
 }
