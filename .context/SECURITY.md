@@ -65,7 +65,7 @@ The GitHub OAuth App requires **minimal scopes**:
 
 | Environment | Callback URL |
 |-------------|--------------|
-| Production | `https://your-domain.vercel.app/api/outstatic/callback` |
+| Production | `https://cms.publication.layardi.com/api/outstatic/callback` |
 | Local Dev | `http://localhost:3000/api/outstatic/callback` |
 
 ---
@@ -137,4 +137,4 @@ For security concerns related to third-party services:
 
 ---
 
-*Last Updated: 2026-02-07*
+*Last Updated: 2026-02-09*

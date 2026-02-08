@@ -27,6 +27,7 @@ npm run dev
    - `OST_GITHUB_SECRET` = Client Secret
    - `OST_REPO_SLUG` = `publication-blog`
    - `OST_REPO_OWNER` = `doctor500`
+   - `OST_URL` = `https://cms.publication.layardi.com`
 3. Deploy → auto-builds Next.js
 
 **CMS URL:** https://cms.publication.layardi.com/outstatic/

@@ -43,6 +43,7 @@ outstatic/content/
 | `OST_GITHUB_SECRET` | GitHub OAuth App Secret |
 | `OST_REPO_SLUG` | `publication-blog` |
 | `OST_REPO_OWNER` | `doctor500` |
+| `OST_URL` | `https://cms.publication.layardi.com` |
 
 ## Content Workflow
 
