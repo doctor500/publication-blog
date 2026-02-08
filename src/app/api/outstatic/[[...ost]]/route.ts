@@ -1,6 +1,6 @@
 /**
  * Outstatic API - OAuth callbacks and CMS operations
- * SECURITY: Excluded from static builds, only runs on Vercel.
+ * SECURITY: Excluded from static builds, only runs on Netlify.
  */
 import { OutstaticApi } from 'outstatic';
 
