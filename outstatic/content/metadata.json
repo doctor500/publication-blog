@@ -1,0 +1,22 @@
+{
+  "commit": "",
+  "generated": "2026-02-08T16:08:50.389Z",
+  "metadata": [
+    {
+      "__outstatic": {
+        "commit": "",
+        "hash": "3947352920",
+        "path": "outstatic/content/posts/cms-test-article.mdx"
+      },
+      "author": {
+        "name": "David LayardiDavid Layardi",
+        "picture": "https://avatars.githubusercontent.com/u/11472121?v=4"
+      },
+      "collection": "posts",
+      "publishedAt": "2026-02-08T16:59:49.903Z",
+      "slug": "cms-test-article",
+      "status": "published",
+      "title": "CMS Test Article"
+    }
+  ]
+}
