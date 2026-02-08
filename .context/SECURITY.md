@@ -83,7 +83,7 @@ The GitHub OAuth App requires **minimal scopes**:
 1. **GitHub OAuth App:**
    - Go to [GitHub Developer Settings](https://github.com/settings/developers)
    - Click your OAuth App → Generate new client secret
-   - Update `OST_GITHUB_SECRET` in Vercel
+   - Update `OST_GITHUB_SECRET` in Netlify
    - Delete old secret after verification
 
 2. **Verification:**
@@ -132,7 +132,7 @@ These patterns are included in `.gitignore`.
 
 For security concerns related to third-party services:
 - **GitHub Security:** https://github.com/security
-- **Vercel Security:** https://vercel.com/security
+- **Netlify Security:** https://docs.netlify.com/security/
 - **Outstatic Issues:** https://github.com/avitorio/outstatic/issues
 
 ---
